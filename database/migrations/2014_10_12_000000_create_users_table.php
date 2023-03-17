@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->date('dob');
+            $table->unsignedBigInteger('role_id');
             $table->text('avatar');
             $table->rememberToken();
             $table->timestamps();
@@ -38,4 +39,5 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
     }
+    
 }

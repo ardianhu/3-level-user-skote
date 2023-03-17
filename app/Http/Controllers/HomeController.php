@@ -45,7 +45,12 @@ class HomeController extends Controller
 
     public function root()
     {
-        return view('index');
+        if(auth()->user()->role_id === 1){
+            return redirect('/dosen');
+        }else{
+            return redirect('/admin');
+        }
+        //return view('index');
     }
     
 

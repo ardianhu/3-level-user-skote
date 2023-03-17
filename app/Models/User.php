@@ -42,4 +42,11 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    protected $attributes =[
+        'role_id' => '1',
+        'avatar' => 'images/default.png'
+    ];
+    public function role(){
+        return $this->belongsTo(Role::class, 'role_id');
+    }
 }

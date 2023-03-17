@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DosenController;
 use App\Http\Controllers\RegisController;
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,13 @@ Auth::routes([
 ]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
+
+Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
+    Route::get('/dosen', [DosenController::class, 'index']);
+});
+Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
+    Route::get('/admin', [AdminController::class, 'index']);
+});
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
