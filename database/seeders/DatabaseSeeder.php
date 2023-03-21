@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
         Role::create([
             'role_name' => 'admin',
         ]);
+        Role::create([
+            'role_name' => 'operator',
+        ]);
         User::create([
             'name' => 'dosen',
             'email' => 'dosen@garuda.com',
@@ -39,6 +42,15 @@ class DatabaseSeeder extends Seeder
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
             'dob' => '02/02/02',
             'role_id' => '2',
+            'remember_token' => Str::random(10)
+        ]);
+        User::create([
+            'name' => 'operator',
+            'email' => 'operator@garuda.com',
+            'email_verified_at' => now(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+            'dob' => '02/02/02',
+            'role_id' => '3',
             'remember_token' => Str::random(10)
         ]);
     }

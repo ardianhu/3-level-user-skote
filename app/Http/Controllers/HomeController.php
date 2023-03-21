@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('verified')->except(['reg', 'log']);
+        $this->middleware('verified')/*->except(['reg', 'log'])*/;
     }
 
     /**
@@ -34,7 +34,7 @@ class HomeController extends Controller
         }
         return abort(404);
     }
-
+/*
     public function reg(Request $request){
         return view('auth.register');
     }
@@ -42,13 +42,15 @@ class HomeController extends Controller
     public function log(Request $request){
         return view('auth.login');
     }
-
+*/
     public function root()
     {
         if(auth()->user()->role_id === 1){
             return redirect('/dosen');
-        }else{
+        }elseif(auth()->user()->role_id ===2){
             return redirect('/admin');
+        }else{
+            return redirect('/operator');
         }
         //return view('index');
     }

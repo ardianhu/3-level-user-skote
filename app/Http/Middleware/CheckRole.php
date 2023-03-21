@@ -19,6 +19,7 @@ class CheckRole
         if (in_array(auth()->user()->role_id, $roles)){
             return $next($request);
         }
-        return response()->json(['anda tidak memiliki akses']);
+        //return response()->json(['anda tidak memiliki akses']);
+        return abort(404);
     }
 }

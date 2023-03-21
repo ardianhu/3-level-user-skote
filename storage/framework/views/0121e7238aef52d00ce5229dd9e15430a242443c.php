@@ -61,7 +61,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                                value="<?php echo e(old('email', 'admin@themesbrand.com')); ?>" id="username"
+                                                /*value="<?php echo e(old('email', 'admin@themesbrand.com')); ?>"*/ id="username"
                                                 placeholder="Enter Email" autocomplete="email" autofocus>
                                             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -97,7 +97,7 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>"
-                                                    id="userpassword" value="123456" placeholder="Enter password"
+                                                    id="userpassword" /*value="123456"*/ placeholder="Enter password"
                                                     aria-label="Password" aria-describedby="password-addon">
                                                 <button class="btn btn-light " type="button" id="password-addon"><i
                                                         class="mdi mdi-eye-outline"></i></button>
@@ -129,6 +129,7 @@ unset($__errorArgs, $__bag); ?>
                                                 In</button>
                                         </div>
 
+                                        <!--
                                         <div class="mt-4 text-center">
                                             <h5 class="font-size-14 mb-3">Sign in with</h5>
 
@@ -150,7 +151,7 @@ unset($__errorArgs, $__bag); ?>
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div>-->
 
                                         <div class="mt-4 text-center">
                                             <?php if(Route::has('password.request')): ?>
@@ -172,7 +173,7 @@ unset($__errorArgs, $__bag); ?>
                                 <p>© <script>
                                         document.write(new Date().getFullYear())
 
-                                    </script> Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                    </script> Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Garuda Cyber Indonesia
                                 </p>
                             </div>
                         </div>

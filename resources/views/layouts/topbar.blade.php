@@ -3,7 +3,7 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index" class="logo logo-dark">
+                <a href="/" class="logo logo-dark">
                     <span class="logo-sm">
                         <img src="{{ URL::asset('/assets/images/logo.svg') }}" alt="" height="22">
                     </span>
@@ -12,7 +12,7 @@
                     </span>
                 </a>
 
-                <a href="index" class="logo logo-light">
+                <a href="/" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{ URL::asset('/assets/images/logo-light.svg') }}" alt="" height="22">
                     </span>
@@ -204,6 +204,9 @@
                     @case('es')
                         <img src="{{ URL::asset('/assets/images/flags/spain.jpg')}}" alt="Header Language" height="16">
                     @break
+                    @case('id')
+                        <img src="{{ URL::asset('/assets/images/flags/indonesia.svg')}}" alt="Header Language" height="16">
+                    @break
                     @default
                         <img src="{{ URL::asset('/assets/images/flags/us.jpg')}}" alt="Header Language" height="16">
                 @endswitch
@@ -213,6 +216,10 @@
                 <!-- item-->
                 <a href="{{ url('index/en') }}" class="dropdown-item notify-item language" data-lang="eng">
                     <img src="{{ URL::asset ('/assets/images/flags/us.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
+                </a>
+                <!-- item-->
+                <a href="{{ url('index/id') }}" class="dropdown-item notify-item language" data-lang="id">
+                    <img src="{{ URL::asset ('/assets/images/flags/indonesia.svg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Indonesia</span>
                 </a>
                 <!-- item-->
                 <a href="{{ url('index/es') }}" class="dropdown-item notify-item language" data-lang="sp">

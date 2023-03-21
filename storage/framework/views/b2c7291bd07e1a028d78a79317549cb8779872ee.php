@@ -658,6 +658,7 @@
 <!-- end modal -->
 
 <!-- subscribeModal -->
+<!--
 <div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -694,6 +695,7 @@
         </div>
     </div>
 </div>
+-->
 <!-- end modal -->
 
 <?php $__env->stopSection(); ?>
@@ -704,4 +706,4 @@
 <!-- dashboard init -->
 <script src="<?php echo e(URL::asset('/assets/js/pages/dashboard.init.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\3-level-user-skote\resources\views/admin/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.adminmaster', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\3-level-user-skote\resources\views/admin/index.blade.php ENDPATH**/ ?>
