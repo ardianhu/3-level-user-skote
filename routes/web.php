@@ -33,6 +33,10 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
 //route untuk admin
 Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
     Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/registrasi-user', [AdminController::class, 'reg']);
+    Route::get('daftar-user', [AdminController::class, 'showuser']);
+    Route::post('/daftar-user', [AdminController::class, 'store'])->name('store');
+    Route::delete('/delete/{id}', [AdminController::class, 'delete'])->name('delete');
 });
 //route untuk admin
 Route::group(['middleware' => ['auth', 'checkrole:3']], function() {

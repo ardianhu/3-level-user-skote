@@ -25,8 +25,8 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="index" key="t-default">Biodata Dosen</a></li>
                         <li><a href="dashboard-saas" key="t-saas">Perubahan Data Dosen</a></li>
-                        <li><a href="dashboard-crypto" key="t-crypto">Kelengkapan Biodata</a></li>
-                        <li><a href="dashboard-blog" key="t-blog">Dokumen Dosen</a></li>
+                        <li><a href="/daftar-user" key="t-crypto">Daftar User</a></li>
+                        <li><a href="/registrasi-user" key="t-blog">Register User</a></li>
                         <li><a href="dashboard-blog" key="t-blog">Riwayat Pendidikan</a></li>
                         <li><a href="dashboard-blog" key="t-blog">Riwayat Pelaksanaan Pendidikan</a></li>
                         <li><a href="dashboard-blog" key="t-blog">Riwayat Pelaksanaan Penelitian</a></li>

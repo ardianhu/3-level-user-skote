@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Elequent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -19,7 +20,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'name',
         'email',
+        'email_verified_at',
         'password',
+        'role_id',
         'dob', 
         'avatar',
     ];
@@ -46,6 +49,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'role_id' => '1',
         'avatar' => 'images/default.png'
     ];
+    protected $with=["role"];
     public function role(){
         return $this->belongsTo(Role::class, 'role_id');
     }

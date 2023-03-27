@@ -23,11 +23,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->date('dob');
             $table->unsignedBigInteger('role_id');
-            $table->text('avatar');
+            $table->text('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
-        User::create(['name' => 'admin','dob'=>'2000-10-10','email' => 'admin@themesbrand.com','password' => Hash::make('123456'),'email_verified_at'=>'2022-01-02 17:04:58','avatar' => 'images/avatar-1.jpg','created_at' => now(),]);
+        User::create(['name' => 'admin','dob'=>'2000-10-10','email' => 'admin@themesbrand.com','password' => Hash::make('123456'),'email_verified_at'=>now(),'avatar' => 'images/avatar-1.jpg','created_at' => now(),]);
     }
 
     /**
