@@ -17,10 +17,14 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
                     <h4 class="card-title">Table head</h4>
                     <p class="card-title-desc">Use one of two modifier classes to make <code>&lt;thead&gt;</code>s appear
                         light or dark gray.</p>
-                        <button type="button" class="mb-3 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable">Tambahkan Data</button>
+                        </div>
+                        <button type="button" style="height: 40px;" class="mb-3 p-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable">Tambahkan User</button>
+                        </div>
 
                 <!-- Scrollable modal -->
                 <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -83,17 +87,6 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label for="confirmpassword" class="form-label">Confirm Password</label>
-                                            <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="confirmpassword" name="password_confirmation"
-                                            name="password_confirmation" placeholder="Enter Confirm password" autofocus required>
-                                            @error('password_confirmation')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-
-                                        <div class="mb-3">
                                             <label for="avatar">Profile Picture</label>
                                             <div class="input-group">
                                                 <input type="file" class="form-control @error('avatar') is-invalid @enderror" id="inputGroupFile02" name="avatar" autofocus>
@@ -106,7 +99,7 @@
                                             @enderror
                                         </div>
                                         <div class="mb-3 row">
-                    <label class="col-md-2 col-form-label">Level</label>
+                    <label class="col-md-2 col-form-label text-center">Level</label>
                     <div class="col-md-10">
                         <select class="form-select text-capitalize" name="role_id">
                             @foreach($roles as $role)

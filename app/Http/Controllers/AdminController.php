@@ -33,18 +33,21 @@ class AdminController extends Controller
             'dob' => 'required',
             'role_id' => 'required'
         ]);
-        $avatar = request()->file('avatar');
-        $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
-        $avatarPath = public_path('/images/');
-        $avatar->move($avatarPath, $avatarName);
         $data ['email_verified_at'] = now();
         $data ['password'] = Hash::make($request->input('password'));
         $data ['dob'] = date('Y-m-d', strtotime($request->input('dob')));
-        $data ['avatar'] = "/images/".$avatarName;
+        if (request()->has('avatar')) { 
+            $avatar = request()->file('avatar');
+            $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
+            $avatarPath = public_path('/images/');
+            $avatar->move($avatarPath, $avatarName);
+            $data ['avatar'] = "/images/".$avatarName;
+        }
         User::create($data);
-
+        
         return redirect()->back();
-
+    }
+        
         /*
         if (request()->has('avatar')) {            
             $avatar = request()->file('avatar');
@@ -63,5 +66,4 @@ class AdminController extends Controller
         ]);
         return redirect()->route('/');
         */
-    }
 }
