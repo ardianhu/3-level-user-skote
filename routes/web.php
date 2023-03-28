@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
     Route::get('daftar-user', [AdminController::class, 'showuser']);
     Route::post('/daftar-user', [AdminController::class, 'store'])->name('store');
     Route::delete('/delete/{id}', [AdminController::class, 'delete'])->name('delete');
+    Route::post('/update-user', [AdminController::class, 'updateuser'])->name('updateuser');
 });
 //route untuk admin
 Route::group(['middleware' => ['auth', 'checkrole:3']], function() {

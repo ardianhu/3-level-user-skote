@@ -6,26 +6,34 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\App;
+
 class AdminController extends Controller
 {
     //
-    public function index(){
+    public function index()
+    {
         return view('admin.index');
     }
-    public function reg(){
+    public function reg()
+    {
         return view('admin.reg');
     }
-    public function showuser(){
+    public function showuser()
+    {
         $datas = User::all();
         $roles = Role::all();
         return view('admin.show', compact(['datas', 'roles']));
     }
-    public function delete($id){
+    public function delete($id)
+    {
         $data = User::find($id);
         $data->delete();
         return redirect()->back();
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $data = $request->validate([
             'name' => 'required|string|max:225',
             'email' => 'required|email|max:225',
@@ -33,22 +41,22 @@ class AdminController extends Controller
             'dob' => 'required',
             'role_id' => 'required'
         ]);
-        $data ['email_verified_at'] = now();
-        $data ['password'] = Hash::make($request->input('password'));
-        $data ['dob'] = date('Y-m-d', strtotime($request->input('dob')));
-        if (request()->has('avatar')) { 
+        $data['email_verified_at'] = now();
+        $data['password'] = Hash::make($request->input('password'));
+        $data['dob'] = date('Y-m-d', strtotime($request->input('dob')));
+        if (request()->has('avatar')) {
             $avatar = request()->file('avatar');
             $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
             $avatarPath = public_path('/images/');
             $avatar->move($avatarPath, $avatarName);
-            $data ['avatar'] = "/images/".$avatarName;
+            $data['avatar'] = "/images/" . $avatarName;
         }
         User::create($data);
-        
+
         return redirect()->back();
     }
-        
-        /*
+
+    /*
         if (request()->has('avatar')) {            
             $avatar = request()->file('avatar');
             $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
@@ -66,4 +74,15 @@ class AdminController extends Controller
         ]);
         return redirect()->route('/');
         */
+    public function
+    updateuser(Request $request)
+    {
+        $updated = User::find($request->id);
+        $updated->name = $request->name;
+        $updated->email = $request->email;
+        $updated->dob = $request->dob;
+        $updated->role_id = $request->role_id;
+        $updated->save();
+        return redirect()->back();
+    }
 }
