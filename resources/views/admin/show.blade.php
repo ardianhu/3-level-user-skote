@@ -19,9 +19,8 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <div>
-                        <h4 class="card-title">Table head</h4>
-                        <p class="card-title-desc">Use one of two modifier classes to make <code>&lt;thead&gt;</code>s appear
-                            light or dark gray.</p>
+                        <h4 class="card-title">Daftar User</h4>
+                        <p class="card-title-desc">Berikut daftar pengguna yang terdaftar di platform ini .</p>
                     </div>
                     <button type="button" style="height: 40px;" class="mb-3 p-2 btn btn-success waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#exampleModalScrollable"><span><i class="bx bxs-add-to-queue mx-2"></i></span>Tambahkan User</button>
                 </div>

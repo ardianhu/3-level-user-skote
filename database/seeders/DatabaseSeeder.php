@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Biodata;
 
 class DatabaseSeeder extends Seeder
 {
@@ -52,6 +53,34 @@ class DatabaseSeeder extends Seeder
             'dob' => '02/02/02',
             'role_id' => '3',
             'remember_token' => Str::random(10)
+        ]);
+        Biodata::create([
+            'user_id' => '1',
+            'nidn' => '1902510008',
+            'nip' => '1038261129',
+            'tmt_sk_pengangkatan_dosen' => '02/02/02',
+            'nama_lengkap' => 'Moh. Ardian Hasanal Umam',
+            'gelar_depan' => 'Ir.',
+            'gelar_belakang' => 'S.T.',
+            'tempat_lahir' => 'Kyoto',
+            'tanggal_lahir' => '02/02/02',
+            'jenis_kelamin' => 'laki-laki',
+            'perguruan_tinggi' => 'Harvard University',
+            /*'fakultas' => 'Science Technology',
+            'program_studi' => 'Alchemy',*/
+            'jabatan_akademik_terakhir' => 'Professor',
+            'jenis_pendidikan_yang_dibina' => 'Sarjana 1',
+            'status_kepegawaian' => 'none',
+            'kum' => '900',
+            'tmt_jabatan_akademik_terakhir' => '02/02/02',
+            'pangkat_akademik_terakhir' => 'Doctor',
+            'tmt_pangkat_akademik_terakhir' => '02/02/02',
+            'pendidikan_terakhir' => 'Magister',
+            'nip_pimpinan' => '9863992',
+            'nidn_pimpinan' => '93629287',
+            'nama_pimpinan' => 'Fukada',
+            'gelar_depan_pimpinan' => 'Ms.',
+            'gelar_belakang_pimpinan' => 'BA.',
         ]);
     }
 }

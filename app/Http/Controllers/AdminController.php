@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Biodata;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\App;
@@ -51,7 +52,10 @@ class AdminController extends Controller
             $avatar->move($avatarPath, $avatarName);
             $data['avatar'] = "/images/" . $avatarName;
         }
-        User::create($data);
+        $user = User::create($data);
+        $bio = new Biodata();
+        $bio->user_id = $user->id;
+        $bio->save();
 
         return redirect()->back();
     }

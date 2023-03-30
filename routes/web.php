@@ -27,11 +27,13 @@ Auth::routes([
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
 //route untuk dosen
-Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
     Route::get('/dosen', [DosenController::class, 'index']);
+    Route::get('/bio-dosen', [DosenController::class, 'showbio']);
+    Route::put('/bio-update', [DosenController::class, 'updatebio']);
 });
 //route untuk admin
-Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
     Route::get('/admin', [AdminController::class, 'index']);
     Route::get('/registrasi-user', [AdminController::class, 'reg']);
     Route::get('daftar-user', [AdminController::class, 'showuser']);
@@ -40,7 +42,7 @@ Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
     Route::post('/update-user', [AdminController::class, 'updateuser'])->name('updateuser');
 });
 //route untuk admin
-Route::group(['middleware' => ['auth', 'checkrole:3']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:3']], function () {
     Route::get('/operator', [OperatorController::class, 'index']);
 });
 
