@@ -28,7 +28,10 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        User::create(['name' => 'admin', 'dob' => '2000-10-10', 'email' => 'admin@themesbrand.com', 'password' => Hash::make('123456'), 'email_verified_at' => now(), 'avatar' => 'images/avatar-1.jpg', 'created_at' => now(),]);
+        User::create(['name' => 'dosen', 'dob' => '2000-10-10', 'email' => 'dosen@garuda.com', 'password' => Hash::make('password'), 'email_verified_at' => now(), 'role_id' => '1', 'avatar' => 'images/avatar-1.jpg', 'created_at' => now(),]);
+        User::create(['name' => 'admin', 'dob' => '2000-10-10', 'email' => 'admin@garuda.com', 'password' => Hash::make('password'), 'email_verified_at' => now(), 'role_id' => '2', 'avatar' => 'images/avatar-1.jpg', 'created_at' => now(),]);
+        User::create(['name' => 'operator', 'dob' => '2000-10-10', 'email' => 'operator@garuda.com', 'password' => Hash::make('password'), 'email_verified_at' => now(), 'role_id' => '3', 'avatar' => 'images/avatar-1.jpg', 'created_at' => now(),]);
+
     }
 
     /**

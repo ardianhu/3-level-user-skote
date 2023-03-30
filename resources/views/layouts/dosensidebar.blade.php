@@ -23,11 +23,11 @@
                         <span key="t-dashboards">Biodata Dasar</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="index" key="t-default">Biodata Dosen</a></li>
-                        <li><a href="dashboard-saas" key="t-saas">Perubahan Data Dosen</a></li>
-                        <li><a href="dashboard-crypto" key="t-crypto">Kelengkapan Biodata</a></li>
-                        <li><a href="dashboard-blog" key="t-blog">Dokumen Dosen</a></li>
-                        <li><a href="dashboard-blog" key="t-blog">Riwayat Pendidikan</a></li>
+                        <li><a href="biodata" key="t-default">Biodata Dosen</a></li>
+                        <li><a href="perubahan" key="t-saas">Perubahan Data Dosen</a></li>
+                        <li><a href="kelengkapan" key="t-crypto">Kelengkapan Biodata</a></li>
+                        <li><a href="dokumen" key="t-blog">Dokumen Dosen</a></li>
+                        <li><a href="pendidikan" key="t-blog">Riwayat Pendidikan</a></li>
                         <li><a href="dashboard-blog" key="t-blog">Riwayat Pelaksanaan Pendidikan</a></li>
                         <li><a href="dashboard-blog" key="t-blog">Riwayat Pelaksanaan Penelitian</a></li>
                         <li><a href="dashboard-blog" key="t-blog">Riwayat Pelaksanaan Pengabdian</a></li>
