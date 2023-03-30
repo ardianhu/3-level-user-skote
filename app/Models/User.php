@@ -23,7 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at',
         'password',
         'role_id',
-        'dob', 
+        'dob',
         'avatar',
     ];
 
@@ -45,12 +45,17 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    protected $attributes =[
+    protected $attributes = [
         'role_id' => '1',
         'avatar' => 'images/default.png'
     ];
-    protected $with=["role"];
-    public function role(){
+    protected $with = ["role"];
+    public function role()
+    {
         return $this->belongsTo(Role::class, 'role_id');
+    }
+    public function biodata()
+    {
+        return $this->hasOne(Biodata::class);
     }
 }

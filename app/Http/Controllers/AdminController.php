@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Biodata;
 use Illuminate\Support\Facades\Hash;
 class AdminController extends Controller
 {
@@ -33,15 +34,20 @@ class AdminController extends Controller
             'dob' => 'required',
             'role_id' => 'required'
         ]);
-        $avatar = request()->file('avatar');
-        $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
-        $avatarPath = public_path('/images/');
-        $avatar->move($avatarPath, $avatarName);
-        $data ['email_verified_at'] = now();
-        $data ['password'] = Hash::make($request->input('password'));
-        $data ['dob'] = date('Y-m-d', strtotime($request->input('dob')));
-        $data ['avatar'] = "/images/".$avatarName;
-        User::create($data);
+        $data['email_verified_at'] = now();
+        $data['password'] = Hash::make($request->input('password'));
+        $data['dob'] = date('Y-m-d', strtotime($request->input('dob')));
+        if (request()->has('avatar')) {
+            $avatar = request()->file('avatar');
+            $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
+            $avatarPath = public_path('/images/');
+            $avatar->move($avatarPath, $avatarName);
+            $data['avatar'] = "/images/" . $avatarName;
+        }
+        $user = User::create($data);
+        $bio = new Biodata();
+        $bio->user_id = $user->id;
+        $bio->save();
 
         return redirect()->back();
 

@@ -27,17 +27,16 @@ Auth::routes([
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
 //route untuk dosen
-Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
     Route::get('/dosen', [DosenController::class, 'index']);
     Route::get('/biodata', [DosenController::class, 'biodata']);
-    Route::get('/tambah-biodata', [DosenController::class, 'store'])->name('store');
     Route::get('/kelengkapan', [DosenController::class, 'kelengkapan']);
     Route::get('/perubahan', [DosenController::class, 'perubahan']);
     Route::get('/dokumen', [DosenController::class, 'dokumen']);
     Route::get('/pendidikan', [DosenController::class, 'pendidikan']);
 });
 //route untuk admin
-Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
     Route::get('/admin', [AdminController::class, 'index']);
     Route::get('/registrasi-user', [AdminController::class, 'reg']);
     Route::get('daftar-user', [AdminController::class, 'showuser']);
@@ -45,7 +44,7 @@ Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
     Route::delete('/delete/{id}', [AdminController::class, 'delete'])->name('delete');
 });
 //route untuk admin
-Route::group(['middleware' => ['auth', 'checkrole:3']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:3']], function () {
     Route::get('/operator', [OperatorController::class, 'index']);
 });
 

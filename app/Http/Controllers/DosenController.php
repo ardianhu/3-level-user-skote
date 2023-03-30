@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Biodata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Role;
@@ -10,65 +12,54 @@ use App\Models\User;
 class DosenController extends Controller
 {
     //
-    public function index(){
+    public function index()
+    {
         return view('user.index');
     }
-    public function biodata(){
-        return view('user.biodata');
-    }
-    public function store(Request $request){
-        $data = $request->validate([
-            'nidn' => 'required',
-            'nip' => 'required',
-            'tmt_sk' => 'required|date',
-            'nama' => 'required|string|max:225',
-            'gelar_depan' => 'required|string|max:225',
-            'gelar_belakang' => 'required|string|max:225',
-            'tempat_lahir' => 'required|string|max:225',
-            'tgl_lahir' => 'required|date',
-            'jenis_kelamin' => 'required|string|max:225',
-            'universitas' => 'required|string|max:225',
-            'pembinaan_pendidikan' => 'required|string|max:225',
-            'status_kepegawaian' => 'required|string|max:225',
-            'jafung_terakhir' => 'required|string|max:225',
-            'kum_jafung_terakhir' => 'required',
-            'tmt_jafung_terakhir' => 'required|date',
-            'pangkat_terakhir' => 'required|string|max:225',
-            'tmt_pangkat_terakhir' => 'required|date',
-            'pendidikan_terakhir' => 'required|string|max:225',
-            'masa_kerja' => 'required|string|max:225',
-            'nip_pimpinan' => 'required',
-            'nidn_pimpinan' => 'required',
-            'nama_pimpinan' => 'required|string|max:225',
-            'gelar_depan_pimpinan' => 'required|string|max:225',
-            'gelar_belakang_pimpinan' => 'required|string|max:225',
-            'jabatan_pimpinan' => 'required|string|max:225',
-            'jafung_terakhir_pimpinan' => 'required|string|max:225',
-            'gol_pimpinan' => 'required|string|max:225',
-            'tmt_gol_terakhir_pimpinan' => 'required|date',
+    public function showbio()
+    {
+        $user = User::find(auth()->id());
+        $biodata = $user->biodata;
+        return view('user.biodata', [
+            'biodata' => $biodata
         ]);
-        $avatar = request()->file('avatar');
-        $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
-        $avatarPath = public_path('/images/');
-        $avatar->move($avatarPath, $avatarName);
-        $data ['email_verified_at'] = now();
-        $data ['password'] = Hash::make($request->input('password'));
-        $data ['dob'] = date('Y-m-d', strtotime($request->input('dob')));
-        $data ['avatar'] = "/images/".$avatarName;
-        User::create($data);
+    }
+    public function updatebio(Request $request)
+    {
+        $user = User::find(auth()->id());
+        $biodata = $user->biodata;
 
+        $biodata->nidn = $request->input('nidn');
+        $biodata->nip = $request->input('nip');
+        $biodata->tmt_sk_pengangkatan_dosen = $request->input('tmt_sk_pengangkatan_dosen');
+        $biodata->nama_lengkap = $request->input('nama_lengkap');
+        $biodata->gelar_depan = $request->input('gelar_depan');
+        $biodata->gelar_belakang = $request->input('gelar_belakang');
+        $biodata->tempat_lahir = $request->input('tempat_lahir');
+        $biodata->tanggal_lahir = $request->input('tanggal_lahir');
+        $biodata->jenis_kelamin = $request->input('jenis_kelamin');
+        $biodata->perguruan_tinggi = $request->input('perguruan_tinggi');
+        /*$biodata->fakultas = $request->input('fakultas');
+        $biodata->program_studi = $request->input('program_studi');*/
+        $biodata->jabatan_akademik_terakhir = $request->input('jabatan_akademik_terakhir');
+        $biodata->jenis_pendidikan_yang_dibina = $request->input('jenis_pendidikan_yang_dibina');
+        $biodata->status_kepegawaian = $request->input('status_kepegawaian');
+        $biodata->kum = $request->input('kum');
+        $biodata->tmt_jabatan_akademik_terakhir = $request->input('tmt_jabatan_akademik_terakhir');
+        $biodata->pangkat_akademik_terakhir = $request->input('pangkat_akademik_terakhir');
+        $biodata->tmt_pangkat_akademik_terakhir = $request->input('tmt_pangkat_akademik_terakhir');
+        $biodata->pendidikan_terakhir = $request->input('pendidikan_terakhir');
+        $biodata->nip_pimpinan = $request->input('nip_pimpinan');
+        $biodata->nidn_pimpinan = $request->input('nidn_pimpinan');
+        $biodata->nama_pimpinan = $request->input('nama_pimpinan');
+        $biodata->gelar_depan_pimpinan = $request->input('gelar_depan_pimpinan');
+        $biodata->gelar_belakang_pimpinan = $request->input('gelar_belakang_pimpinan');
+        $biodata->jabatan_pimpinan = $request->input('jabatan_pimpinan');
+        $biodata->jabatan_fungsional_pimpinan = $request->input('jabatan_fungsional_pimpinan');
+        $biodata->golongan_pimpinan = $request->input('golongan_pimpinan');
+        $biodata->tmt_golongan_terakhir_pimpinan = $request->input('tmt_golongan_terakhir_pimpinan');
+
+        $biodata->save();
         return redirect()->back();
-    }
-    public function kelengkapan(){
-        return view('user.kelengkapan');
-    }
-    public function perubahan(){
-        return view('user.perubahan');
-    }
-    public function dokumen(){
-        return view('user.dokumen');
-    }
-    public function pendidikan(){
-        return view('user.pendidikan');
     }
 }
