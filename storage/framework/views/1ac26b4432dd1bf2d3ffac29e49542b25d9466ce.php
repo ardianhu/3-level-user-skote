@@ -479,5 +479,4 @@
         <!-- Sidebar -->
     </div>
 </div>
-<!-- Left Sidebar End -->
-<?php /**PATH C:\xampp\htdocs\3-level-user-skote\resources\views/layouts/dosensidebar.blade.php ENDPATH**/ ?>
+<!-- Left Sidebar End --><?php /**PATH C:\xampp\htdocs\3-level-user-skote\resources\views/layouts/dosensidebar.blade.php ENDPATH**/ ?>

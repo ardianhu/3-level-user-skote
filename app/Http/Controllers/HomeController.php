@@ -48,7 +48,7 @@ class HomeController extends Controller
     {
         if(auth()->user()->role_id === 1){
             return redirect('/dosen');
-        }elseif(auth()->user()->role_id ===2){
+        }elseif(auth()->user()->role_id === 2){
             return redirect('/admin');
         }else{
             return redirect('/operator');

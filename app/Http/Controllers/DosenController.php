@@ -7,7 +7,6 @@ use App\Models\Biodata;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Role;
-use App\Models\User;
 
 class DosenController extends Controller
 {
@@ -16,7 +15,7 @@ class DosenController extends Controller
     {
         return view('user.index');
     }
-    public function showbio()
+    public function biodata()
     {
         $user = User::find(auth()->id());
         $biodata = $user->biodata;
