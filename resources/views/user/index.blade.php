@@ -1,9 +1,24 @@
 @extends('layouts.dosenmaster')
 
+<<<<<<< Updated upstream
 @section('title') @lang('Beranda') @endsection
+=======
+@section('title')
+    @lang('translation.Dashboards')
+@endsection
+>>>>>>> Stashed changes
 
 @section('content')
+    @component('components.breadcrumb')
+        @slot('li_1')
+            Beranda
+        @endslot
+        @slot('title')
+            Beranda Dosen
+        @endslot
+    @endcomponent
 
+<<<<<<< Updated upstream
 @component('components.breadcrumb')
 @slot('li_1') Beranda @endslot
 @slot('title') Beranda Dosen @endslot
@@ -50,11 +65,14 @@
 </div>
 <!-- end modal -->
 
+=======
+    <!-- end modal -->
+>>>>>>> Stashed changes
 @endsection
 @section('script')
-<!-- apexcharts -->
-<script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+    <!-- apexcharts -->
+    <script src="{{ URL::asset('/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
 
-<!-- dashboard init -->
-<script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
+    <!-- dashboard init -->
+    <script src="{{ URL::asset('/assets/js/pages/dashboard.init.js') }}"></script>
 @endsection

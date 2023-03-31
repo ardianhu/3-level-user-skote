@@ -29,11 +29,15 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('roo
 //route untuk dosen
 Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
     Route::get('/dosen', [DosenController::class, 'index']);
+<<<<<<< Updated upstream
     Route::get('/biodata', [DosenController::class, 'biodata']);
     Route::get('/kelengkapan', [DosenController::class, 'kelengkapan']);
     Route::get('/perubahan', [DosenController::class, 'perubahan']);
     Route::get('/dokumen', [DosenController::class, 'dokumen']);
     Route::get('/pendidikan', [DosenController::class, 'pendidikan']);
+=======
+    Route::get('/riwayat-pendidikan', [DosenController::class, 'ripen']);
+>>>>>>> Stashed changes
 });
 //route untuk admin
 Route::group(['middleware' => ['auth', 'checkrole:2']], function () {

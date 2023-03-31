@@ -10,6 +10,7 @@
     @endsection
 
     @section('content')
+<<<<<<< Updated upstream
     <div class="account-pages my-5 pt-sm-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -21,6 +22,24 @@
                                     <div class="text-primary p-4">
                                         <h5 class="text-primary">Selamat Datang!</h5>
                                         <p>Silahkan login untuk masuk.</p>
+=======
+        <div class="account-pages my-5 pt-sm-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-6 col-xl-5">
+                        <div class="card overflow-hidden">
+                            <div class="bg-primary bg-soft">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="text-primary p-4">
+                                            <h5 class="text-primary">Selamat Datang</h5>
+                                            <p>Sistem Smart Pak</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-5 align-self-end">
+                                        <img src="{{ URL::asset('/assets/images/profile-img.png') }}" alt=""
+                                            class="img-fluid">
+>>>>>>> Stashed changes
                                     </div>
                                 </div>
                                 <div class="col-5 align-self-end">
@@ -117,6 +136,22 @@
                             </div>
 
                         </div>
+<<<<<<< Updated upstream
+=======
+                       <!-- <div class="mt-5 text-center">
+
+                            <div>
+                                <p>Don't have an account ? <a href="{{ url('register') }}" class="fw-medium text-primary">
+                                        Signup now </a> </p>
+                                <p>© <script>
+                                        document.write(new Date().getFullYear())
+
+                                    </script> Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Garuda Cyber Indonesia
+                                </p>
+                            </div>
+                        </div>
+
+>>>>>>> Stashed changes
                     </div>
                     <div class="mt-5 text-center">
 

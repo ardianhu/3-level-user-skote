@@ -13,8 +13,9 @@
 </head>
 
 @section('body')
+
     <body data-sidebar="dark">
-@show
+    @show
     <!-- Begin page -->
     <div id="layout-wrapper">
         @include('layouts.topbar')

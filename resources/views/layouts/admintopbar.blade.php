@@ -26,8 +26,8 @@
                 <i class="fa fa-fw fa-bars"></i>
             </button>
 
-           <!-- App Search-->
-           <!--
+            <!-- App Search-->
+            <!--
            <form class="app-search d-none d-lg-block">
             <div class="position-relative">
                 <input type="text" class="form-control" placeholder="@lang('translation.Search')">
@@ -35,7 +35,7 @@
             </div>
         </form>-->
 
-        <!--
+            <!--
 
         <div class="dropdown dropdown-mega d-none d-lg-block ms-2">
             <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
@@ -158,7 +158,7 @@
 
                             <div class="col-sm-5">
                                 <div>
-                                    <img src="{{ URL::asset ('/assets/images/megamenu-img.png') }}" alt="" class="img-fluid mx-auto d-block">
+                                    <img src="{{ URL::asset('/assets/images/megamenu-img.png') }}" alt="" class="img-fluid mx-auto d-block">
                                 </div>
                             </div>
                         </div>
@@ -167,12 +167,12 @@
 
             </div>
         </div>-->
-    </div>
+        </div>
 
-    
-    <div class="d-flex">
 
-        <!--
+        <div class="d-flex">
+
+            <!--
         <div class="dropdown d-inline-block d-lg-none ms-2">
             <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -197,58 +197,63 @@
             <button type="button" class="btn header-item waves-effect"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 @switch(Session::get('lang'))
-                    @case('ru')
-                        <img src="{{ URL::asset('/assets/images/flags/russia.jpg')}}" alt="Header Language" height="16">
-                    @break
-                    @case('it')
-                        <img src="{{ URL::asset('/assets/images/flags/italy.jpg')}}" alt="Header Language" height="16">
-                    @break
-                    @case('de')
-                        <img src="{{ URL::asset('/assets/images/flags/germany.jpg')}}" alt="Header Language" height="16">
-                    @break
-                    @case('es')
-                        <img src="{{ URL::asset('/assets/images/flags/spain.jpg')}}" alt="Header Language" height="16">
-                    @break
-                    @case('id')
-                        <img src="{{ URL::asset('/assets/images/flags/indonesia.svg')}}" alt="Header Language" height="16">
-                    @break
-                    @default
-                        <img src="{{ URL::asset('/assets/images/flags/us.jpg')}}" alt="Header Language" height="16">
-                @endswitch
+    @case('ru')
+        <img src="{{ URL::asset('/assets/images/flags/russia.jpg') }}" alt="Header Language" height="16">
+    @break
+
+    @case('it')
+        <img src="{{ URL::asset('/assets/images/flags/italy.jpg') }}" alt="Header Language" height="16">
+    @break
+
+    @case('de')
+        <img src="{{ URL::asset('/assets/images/flags/germany.jpg') }}" alt="Header Language" height="16">
+    @break
+
+    @case('es')
+        <img src="{{ URL::asset('/assets/images/flags/spain.jpg') }}" alt="Header Language" height="16">
+    @break
+
+    @case('id')
+        <img src="{{ URL::asset('/assets/images/flags/indonesia.svg') }}" alt="Header Language" height="16">
+    @break
+
+    @default
+        <img src="{{ URL::asset('/assets/images/flags/us.jpg') }}" alt="Header Language" height="16">
+@endswitch
             </button>
             <div class="dropdown-menu dropdown-menu-end">
 
                 
                 <a href="{{ url('index/en') }}" class="dropdown-item notify-item language" data-lang="eng">
-                    <img src="{{ URL::asset ('/assets/images/flags/us.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
+                    <img src="{{ URL::asset('/assets/images/flags/us.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">English</span>
                 </a>
                 
                 
                 <a href="{{ url('index/id') }}" class="dropdown-item notify-item language" data-lang="id">
-                    <img src="{{ URL::asset ('/assets/images/flags/indonesia.svg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Indonesia</span>
+                    <img src="{{ URL::asset('/assets/images/flags/indonesia.svg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Indonesia</span>
                 </a>
                 
                 <a href="{{ url('index/es') }}" class="dropdown-item notify-item language" data-lang="sp">
-                    <img src="{{ URL::asset ('/assets/images/flags/spain.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
+                    <img src="{{ URL::asset('/assets/images/flags/spain.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
                 </a>
 
                 
                 <a href="{{ url('index/de') }}" class="dropdown-item notify-item language" data-lang="gr">
-                    <img src="{{ URL::asset ('/assets/images/flags/germany.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
+                    <img src="{{ URL::asset('/assets/images/flags/germany.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
                 </a>
 
                 
                 <a href="{{ url('index/it') }}" class="dropdown-item notify-item language" data-lang="it">
-                    <img src="{{ URL::asset ('/assets/images/flags/italy.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
+                    <img src="{{ URL::asset('/assets/images/flags/italy.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
                 </a>
 
                 
                 <a href="{{ url('index/ru') }}" class="dropdown-item notify-item language" data-lang="ru">
-                    <img src="{{ URL::asset ('/assets/images/flags/russia.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
+                    <img src="{{ URL::asset('/assets/images/flags/russia.jpg') }}" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
                 </a>
             </div>
         </div>-->
-<!--
+            <!--
         <div class="dropdown d-none d-lg-inline-block ms-1">
             <button type="button" class="btn header-item noti-icon waves-effect"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -259,19 +264,19 @@
                     <div class="row g-0">
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="{{ URL::asset ('/assets/images/brands/github.png') }}" alt="Github">
+                                <img src="{{ URL::asset('/assets/images/brands/github.png') }}" alt="Github">
                                 <span>GitHub</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="{{ URL::asset ('/assets/images/brands/bitbucket.png') }}" alt="bitbucket">
+                                <img src="{{ URL::asset('/assets/images/brands/bitbucket.png') }}" alt="bitbucket">
                                 <span>Bitbucket</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="{{ URL::asset ('/assets/images/brands/dribbble.png') }}" alt="dribbble">
+                                <img src="{{ URL::asset('/assets/images/brands/dribbble.png') }}" alt="dribbble">
                                 <span>Dribbble</span>
                             </a>
                         </div>
@@ -280,19 +285,19 @@
                     <div class="row g-0">
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="{{ URL::asset ('/assets/images/brands/dropbox.png') }}" alt="dropbox">
+                                <img src="{{ URL::asset('/assets/images/brands/dropbox.png') }}" alt="dropbox">
                                 <span>Dropbox</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="{{ URL::asset ('/assets/images/brands/mail_chimp.png') }}" alt="mail_chimp">
+                                <img src="{{ URL::asset('/assets/images/brands/mail_chimp.png') }}" alt="mail_chimp">
                                 <span>Mail Chimp</span>
                             </a>
                         </div>
                         <div class="col">
                             <a class="dropdown-icon-item" href="#">
-                                <img src="{{ URL::asset ('/assets/images/brands/slack.png') }}" alt="slack">
+                                <img src="{{ URL::asset('/assets/images/brands/slack.png') }}" alt="slack">
                                 <span>Slack</span>
                             </a>
                         </div>
@@ -342,7 +347,7 @@
                     </a>
                     <a href="" class="text-reset notification-item">
                         <div class="d-flex">
-                            <img src="{{ URL::asset ('/assets/images/users/avatar-3.jpg') }}"
+                            <img src="{{ URL::asset('/assets/images/users/avatar-3.jpg') }}"
                             class="me-3 rounded-circle avatar-xs" alt="user-pic">
                             <div class="flex-grow-1">
                                 <h6 class="mt-0 mb-1">@lang('translation.James_Lemire')</h6>
@@ -372,7 +377,7 @@
 
                     <a href="" class="text-reset notification-item">
                         <div class="d-flex">
-                            <img src="{{ URL::asset ('/assets/images/users/avatar-4.jpg') }}"
+                            <img src="{{ URL::asset('/assets/images/users/avatar-4.jpg') }}"
                                 class="me-3 rounded-circle avatar-xs" alt="user-pic">
                                 <div class="flex-grow-1">
                                 <h6 class="mt-0 mb-1">@lang('translation.Salena_Layfield')</h6>
@@ -393,44 +398,57 @@
         </div>
     -->
 
-        <div class="dropdown d-inline-block">
-            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img class="rounded-circle header-profile-user" src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('/assets/images/users/avatar-1.jpg') }}"
-                    alt="Header Avatar">
-                <span class="d-none d-xl-inline-block ms-1" key="t-henry">{{ucfirst(Auth::user()->name)}}</span>
-                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
-            </button>
-            <div class="dropdown-menu dropdown-menu-end">
-                <!-- item-->
-                <a class="dropdown-item" href="contacts-profile"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">@lang('translation.Profile')</span></a>
-                <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle me-1"></i> <span key="t-my-wallet">@lang('translation.My_Wallet')</span></a>
-                <a class="dropdown-item d-block" href="#" data-bs-toggle="modal" data-bs-target=".change-password"><span class="badge bg-success float-end">11</span><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">@lang('translation.Settings')</span></a>
-                <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span key="t-lock-screen">@lang('translation.Lock_screen')</span></a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-danger" href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span key="t-logout">@lang('translation.Logout')</span></a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user"
+                        src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('/assets/images/users/avatar-1.jpg') }}"
+                        alt="Header Avatar">
+                    <span class="d-none d-xl-inline-block ms-1"
+                        key="t-henry">{{ ucfirst(Auth::user()->name) }}</span>
+                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a class="dropdown-item" href="contacts-profile"><i
+                            class="bx bx-user font-size-16 align-middle me-1"></i> <span
+                            key="t-profile">@lang('translation.Profile')</span></a>
+                    <a class="dropdown-item" href="#"><i
+                            class="bx bx-wallet font-size-16 align-middle me-1"></i> <span
+                            key="t-my-wallet">@lang('translation.My_Wallet')</span></a>
+                    <a class="dropdown-item d-block" href="#" data-bs-toggle="modal"
+                        data-bs-target=".change-password"><span class="badge bg-success float-end">11</span><i
+                            class="bx bx-wrench font-size-16 align-middle me-1"></i> <span
+                            key="t-settings">@lang('translation.Settings')</span></a>
+                    <a class="dropdown-item" href="#"><i
+                            class="bx bx-lock-open font-size-16 align-middle me-1"></i> <span
+                            key="t-lock-screen">@lang('translation.Lock_screen')</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-danger" href="javascript:void();"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                            class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span
+                            key="t-logout">@lang('translation.Logout')</span></a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </div>
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                    <i class="bx bx-cog bx-spin"></i>
+                </button>
             </div>
         </div>
-        <div class="dropdown d-inline-block">
-            <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                <i class="bx bx-cog bx-spin"></i>
-            </button>
-        </div>
     </div>
-</div>
 </header>
 <!--  Change-Password example -->
-<div class="modal fade change-password" tabindex="-1" role="dialog"
-aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade change-password" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="myLargeModalLabel">Change Password</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form method="POST" id="change-password">
@@ -442,7 +460,8 @@ aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             class="form-control @error('current_password') is-invalid @enderror"
                             name="current_password" autocomplete="current_password"
                             placeholder="Enter Current Password" value="{{ old('current_password') }}">
-                        <div class="text-danger" id="current_passwordError" data-ajax-feedback="current_password"></div>
+                        <div class="text-danger" id="current_passwordError" data-ajax-feedback="current_password">
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -455,14 +474,16 @@ aria-labelledby="myLargeModalLabel" aria-hidden="true">
 
                     <div class="mb-3">
                         <label for="userpassword">Confirm Password</label>
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                            autocomplete="new_password" placeholder="Enter New Confirm password">
-                        <div class="text-danger" id="password_confirmError" data-ajax-feedback="password-confirm"></div>
+                        <input id="password-confirm" type="password" class="form-control"
+                            name="password_confirmation" autocomplete="new_password"
+                            placeholder="Enter New Confirm password">
+                        <div class="text-danger" id="password_confirmError" data-ajax-feedback="password-confirm">
+                        </div>
                     </div>
 
                     <div class="mt-3 d-grid">
-                        <button class="btn btn-primary waves-effect waves-light UpdatePassword" data-id="{{ Auth::user()->id }}"
-                            type="submit">Update Password</button>
+                        <button class="btn btn-primary waves-effect waves-light UpdatePassword"
+                            data-id="{{ Auth::user()->id }}" type="submit">Update Password</button>
                     </div>
                 </form>
             </div>

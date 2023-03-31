@@ -5,7 +5,7 @@ var __webpack_exports__ = {};
   \************************************************/
 $(function () {
   $("#basic-example").steps({
-    headerTag: "h3",
+    headerTag: "h5",
     bodyTag: "section",
     transitionEffect: "slide"
   }), $("#vertical-example").steps({

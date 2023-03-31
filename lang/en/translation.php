@@ -2,7 +2,7 @@
 
 return [
   "Menu" => "Menu",
-  "Dashboards" => "Dashboards",
+  "Dashboards" => "Beranda",
   "Default" => "Default",
   "Saas" => "Saas",
   "Crypto" => "Crypto",
@@ -102,7 +102,7 @@ return [
   "Images" => "Images",
   "Lightbox" => "Lightbox",
   "Modals" => "Modals",
-  "Offcanvas" =>"Off Canvas",
+  "Offcanvas" => "Off Canvas",
   "Range_Slider" => "Range Slider",
   "Session_Timeout" => "Session Timeout",
   "Progress_Bars" => "Progress Bars",
@@ -123,7 +123,7 @@ return [
   "Form_File_Upload" => "Form File Upload",
   "Form_Xeditable" => "Form Xeditable",
   "Form_Repeater" => "Form Repeater",
-  "Form_Wizard" => "Form Wizard",
+  "Form_Wizard" => "Dashboard",
   "Form_Mask" => "Form Mask",
   "Tables" => "Tables",
   "Basic_Tables" => "Basic Tables",

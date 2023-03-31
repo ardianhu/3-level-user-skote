@@ -1,28 +1,23 @@
-@extends('layouts.master')
 
-@section('title') @lang('translation.Form_Wizard') @endsection
 
-@section('content')
+<?php $__env->startSection('title'); ?> <?php echo app('translator')->get('translation.Form_Wizard'); ?> <?php $__env->stopSection(); ?>
 
-@component('components.breadcrumb')
-@slot('li_1') Forms @endslot
-@slot('title') Form Wizard @endslot
-@endcomponent
+<?php $__env->startSection('content'); ?>
+
+<?php $__env->startComponent('components.breadcrumb'); ?>
+<?php $__env->slot('li_1'); ?> Data Dasar <?php $__env->endSlot(); ?>
+<?php $__env->slot('title'); ?> Riwayat Pendidikan <?php $__env->endSlot(); ?>
+<?php echo $__env->renderComponent(); ?>
 
 <div class="row">
-    <div class="col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title mb-4">Basic Wizard</h4>
-
                 <div id="basic-example">
                     <!-- Seller Details -->
-                    <h3>Seller Details</h3>
+                    <h3>Pendidikan Pelaksanaan</h3>
                     <section>
                         <form>
-                            <div class="row">
+                            <div class="mb-3 row">
                                 <div class="col-lg-6">
-                                    <div class="mb-3">
+                                    <div class="mb-9">
                                         <label for="basicpill-firstname-input">First name</label>
                                         <input type="text" class="form-control" id="basicpill-firstname-input" placeholder="Enter Your First Name">
                                     </div>
@@ -61,10 +56,10 @@
                     </section>
 
                     <!-- Company Document -->
-                    <h3>Company Document</h3>
+                    <h3>Pelaksanaan Pendidikan</h3>
                     <section>
                         <form>
-                            <div class="row">
+                            <div class="mb-3 row">
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label for="basicpill-pancard-input">PAN Card</label>
@@ -113,7 +108,7 @@
                     </section>
 
                     <!-- Bank Details -->
-                    <h3>Bank Details</h3>
+                    <h3>Pelaksanaan Penelitian</h3>
                     <section>
                         <div>
                             <form>
@@ -377,11 +372,12 @@
 </div>
 <!-- end row -->
 
-@endsection
-@section('script')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
 <!-- jquery step -->
-<script src="{{ URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js') }}"></script>
+<script src="<?php echo e(URL::asset('/assets/libs/jquery-steps/jquery-steps.min.js')); ?>"></script>
 
 <!-- form wizard init -->
-<script src="{{ URL::asset('/assets/js/pages/form-wizard.init.js') }}"></script>
-@endsection
+<script src="<?php echo e(URL::asset('/assets/js/pages/form-wizard.init.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.dosenmaster', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp1\htdocs\3-level-user-skote\resources\views/user/riwayat-pen.blade.php ENDPATH**/ ?>
