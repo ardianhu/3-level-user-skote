@@ -15,9 +15,10 @@ class DosenController extends Controller
     {
         return view('user.index');
     }
-<<<<<<< Updated upstream
+
     public function biodata()
     {
+
         $user = User::find(auth()->id());
         $biodata = $user->biodata;
         return view('user.biodata', [
@@ -61,10 +62,9 @@ class DosenController extends Controller
 
         $biodata->save();
         return redirect()->back();
-=======
-    public function ripen()
+    }
+    public function RiwayatPendidikan()
     {
         return view('user.riwayat-pendidikan');
->>>>>>> Stashed changes
     }
 }
